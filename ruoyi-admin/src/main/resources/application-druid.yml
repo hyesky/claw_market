@@ -6,9 +6,9 @@ spring:
         druid:
             # 主库数据源
             master:
-                url: jdbc:mysql://localhost:3306/ry-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+                url: jdbc:mysql://localhost:6033/ry-vue?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=GMT%2B8
                 username: root
-                password: password
+                password: root
             # 从库数据源
             slave:
                 # 从数据源开关/默认关闭
@@ -52,7 +52,7 @@ spring:
             filter:
                 stat:
                     enabled: true
-                    # 慢SQL记录
+                    # 慢 SQL 记录
                     log-slow-sql: true
                     slow-sql-millis: 1000
                     merge-sql: true
