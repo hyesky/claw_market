@@ -1,0 +1,15 @@
+# 小易智能体超市 robots.txt
+# 允许搜索引擎抓取所有页面
+
+User-agent: *
+Allow: /
+Allow: /agents/
+
+# 禁止抓取隐藏文件和系统目录
+Disallow: /.git/
+Disallow: /agents/.git/
+Disallow: /*.git*
+Disallow: /.github/
+
+# 站点地图位置
+Sitemap: https://www.hyesky.com/sitemap.xml
