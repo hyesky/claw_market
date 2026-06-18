@@ -36,6 +36,37 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 
 <style>
+
+.btn-primary{background:var(--ink,#1d1d1f);color:var(--canvas,#fff);padding:17px 34px;border-radius:100px;font-size:16px;font-weight:500;transition:all .3s cubic-bezier(.16,1,.3,1);display:inline-flex;align-items:center;gap:10px;box-shadow:0 1px 2px #13111c47,0 10px 28px #4b3c7a47,0 4px 12px #13111c2e,inset 0 1px #ffffff14;letter-spacing:-.15px;animation:btn-breathe 3.2s ease-in-out infinite;border:none;cursor:pointer;text-decoration:none;}
+
+.download-buttons{display:flex;gap:16px;justify-content:center;margin:16px 0 0;flex-wrap:wrap;}
+.btn-secondary{background:var(--canvas,#fff);color:var(--ink,#1d1d1f);padding:17px 34px;border-radius:100px;font-size:16px;font-weight:500;transition:all .3s cubic-bezier(.16,1,.3,1);display:inline-flex;align-items:center;gap:10px;box-shadow:0 1px 2px #13111c47,0 10px 28px #4b3c7a47,0 4px 12px #13111c2e,inset 0 1px #ffffff14;letter-spacing:-.15px;animation:btn-breathe 3.2s ease-in-out infinite;border:2px solid #d2d2d7;cursor:pointer;text-decoration:none;}
+.btn-secondary:hover{transform:translateY(-1px);box-shadow:0 1px 2px #13111c47,0 12px 32px #4b3c7a47,0 4px 12px #13111c2e,inset 0 1px #ffffff14;border-color:#0071e3;}
+.btn-guide{background:linear-gradient(135deg,#7c3aed,#a855f7);color:#fff;padding:17px 34px;border-radius:100px;font-size:16px;font-weight:500;transition:all .3s cubic-bezier(.16,1,.3,1);display:inline-flex;align-items:center;gap:10px;box-shadow:0 1px 2px #13111c47,0 10px 28px #4b3c7a47,0 4px 12px #13111c2e,inset 0 1px #ffffff14;letter-spacing:-.15px;animation:btn-breathe 3.2s ease-in-out infinite;border:none;cursor:pointer;text-decoration:none;}
+.btn-guide:hover{transform:translateY(-1px);box-shadow:0 1px 2px #13111c47,0 12px 32px #4b3c7a47,0 4px 12px #13111c2e,inset 0 1px #ffffff14;background:linear-gradient(135deg,#6d28d9,#9333ea);}
+/* 模型配置指南弹窗 */
+.guide-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:9998;justify-content:center;align-items:center;backdrop-filter:blur(4px);}
+.guide-overlay.active{display:flex;}
+.guide-box{background:#fff;border-radius:20px;padding:24px;max-width:80vw;width:90%;height:60vh;max-height:700px;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.4);animation:modal-in 0.3s ease;display:flex;flex-direction:column;}
+.guide-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #e5e5e7;}
+.guide-header h2{font-size:20px;font-weight:700;margin:0;color:#1d1d1f;}
+.guide-header .btn-close-guide{background:none;border:none;font-size:28px;cursor:pointer;color:#86868b;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all 0.2s;}
+.guide-header .btn-close-guide:hover{background:#f5f5f7;color:#1d1d1f;}
+.guide-swiper{flex:1;overflow:hidden;position:relative;border-radius:12px;}
+.guide-track{display:flex;transition:transform 0.4s cubic-bezier(.25,.46,.45,.94);height:100%;}
+.guide-slide{min-width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:12px;}
+.guide-slide img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,0.1);}
+.guide-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.9);border:none;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,0.15);transition:all 0.2s;z-index:10;color:#333;}
+.guide-nav:hover{background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.25);transform:translateY(-50%) scale(1.1);}
+.guide-nav.prev{left:8px;}
+.guide-nav.next{right:8px;}
+.guide-dots{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+.guide-dots .dot{width:10px;height:10px;border-radius:50%;background:#d2d2d7;cursor:pointer;transition:all 0.3s;border:none;}
+.guide-dots .dot.active{background:#7c3aed;width:24px;border-radius:5px;}
+.guide-counter{margin-top:8px;text-align:center;color:#86868b;font-size:14px;}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 1px 2px #13111c47,0 12px 32px #4b3c7a47,0 4px 12px #13111c2e,inset 0 1px #ffffff14;}
+@keyframes btn-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif; background: #f5f5f7; color: #1d1d1f; }
 .hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%); }
@@ -196,6 +227,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvet
 @media (min-width: 769px) and (max-width: 1200px) {
   #dept-list { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* 收款弹窗 */
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:9999;justify-content:center;align-items:center;backdrop-filter:blur(4px);}
+.modal-overlay.active{display:flex;}
+.modal-box{background:#fff;border-radius:16px;padding:32px;max-width:380px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);animation:modal-in 0.3s ease;}
+@keyframes modal-in{from{opacity:0;transform:translateY(20px) scale(0.95);}to{opacity:1;transform:translateY(0) scale(1);}}
+.modal-box h2{font-size:22px;margin:0 0 8px;font-weight:700;}
+.modal-box .price{font-size:36px;font-weight:700;color:#ff4444;margin:12px 0;}
+.modal-box .price small{font-size:18px;font-weight:400;color:#86868b;}
+.modal-box .qr-wrapper{margin:20px auto;border:2px dashed #e5e5e7;border-radius:12px;padding:16px;background:#f9f9f9;}
+.modal-box .qr-wrapper img{max-width:240px;border-radius:8px;}
+.modal-box .hint{font-size:14px;color:#86868b;margin:12px 0 4px;}
+.modal-box .timer{font-size:24px;font-weight:600;color:#0071e3;margin:8px 0;}
+.modal-box .btn-confirmed{background:#0071e3;color:#fff;border:none;padding:14px 32px;border-radius:100px;font-size:16px;font-weight:500;cursor:pointer;transition:all 0.2s;margin-top:12px;width:100%;}
+.modal-box .btn-confirmed:hover{background:#005bb5;transform:translateY(-1px);}
+.modal-box .btn-confirmed:disabled{background:#ccc;cursor:not-allowed;transform:none;}
+.modal-box .btn-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:24px;cursor:pointer;color:#86868b;}
 </style>
 </head>
 <body>
@@ -203,7 +251,32 @@ body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvet
 <!-- Hero -->
 <div class="hero">
   <div class="badge">215位AI专家 · 即插即用</div>
-  <h1 style="display:inline-flex;align-items:center;"><img src="/favicon.png" alt="" style="width:48px;height:48px;margin-right:12px;border-radius:50%;flex-shrink:0;">小易智能体超市</h1>
+  
+  <div class="download-buttons">
+    <a href="/download/hyexon.exe" class="btn-secondary" id="btn-free">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      免费下载
+    </a>
+    <a href="javascript:void(0)" class="btn-primary" id="btn-paid" onclick="openPaymentModal()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M20.585 12.718L14.709 6.841C13.446 5.578 11.554 5.578 10.291 6.841L3.414 13.718C2.637 14.495 2.637 15.787 3.414 16.564L10.291 23.441C11.554 24.704 13.446 24.704 14.709 23.441L20.585 17.564C21.362 16.787 21.362 15.495 20.585 14.718Z"></path>
+        <path d="M14.709 6.841L20.585 12.718L14.709 18.594"></path>
+      </svg>
+      收费下载
+    </a>
+    <button class="btn-guide" id="btn-guide" onclick="openGuideModal()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+      </svg>
+      模型配置指南
+    </button>
+  </div>
+  <br><br>
+<h1 style="display:inline-flex;align-items:center;"><img src="/favicon.png" alt="" style="width:48px;height:48px;margin-right:12px;border-radius:50%;flex-shrink:0;">小易智能体超市</h1>
   <p class="hero-subtitle">215个专业AI智能体，覆盖18个部门</p>
   <p class="hero-subtitle">像逛超市一样，选择你的AI专家</p>
   <div class="search-container">
@@ -1054,5 +1127,228 @@ document.getElementById('dept-list').addEventListener('click', function(e) {
   }
 });
 </script>
+
+<!-- 收款弹窗 -->
+<div class="modal-overlay" id="paymentModal">
+  <div class="modal-box" style="position:relative;">
+    <button class="btn-close" onclick="closePaymentModal()">×</button>
+    <h2>下载授权</h2>
+    <p style="color:#86868b;font-size:15px;">扫码支付后自动解锁下载</p>
+    <div class="price">¥19<small>.90</small></div>
+    
+    <div class="qr-wrapper">
+      <!-- 收款码：替换 src 为实际收款码图片路径 -->
+      <img src="/payment.png" alt="扫码支付19.9元" onerror="this.parentElement.innerHTML='<div style='font-size:14px;color:#999;padding:20px;'>请上传图片 payment.png 到网站根目录<br>尺寸建议 300x300px</div>'">
+    </div>
+    
+    <div class="hint">已扫码？等待60秒自动检测...</div>
+    <div class="timer" id="countdown">60</div>
+    
+    <div id="confirmBtn" style="display:none;">
+    </div>
+  </div>
+</div>
+
+<!-- 模型配置指南弹窗 -->
+<div class="guide-overlay" id="guideModal">
+  <div class="guide-box">
+    <div class="guide-header">
+      <h2>📖 模型配置指南</h2>
+      <button class="btn-close-guide" onclick="closeGuideModal()">×</button>
+    </div>
+    <div class="guide-swiper" id="guideSwiper">
+      <div class="guide-track" id="guideTrack">
+        <div class="guide-slide">
+          <img src="/giard/1.png" alt="配置步骤 1">
+        </div>
+        <div class="guide-slide">
+          <img src="/giard/2.png" alt="配置步骤 2">
+        </div>
+        <div class="guide-slide">
+          <img src="/giard/3.png" alt="配置步骤 3">
+        </div>
+        <div class="guide-slide">
+          <img src="/giard/4.png" alt="配置步骤 4">
+        </div>
+        <div class="guide-slide">
+          <img src="/giard/5.png" alt="配置步骤 5">
+        </div>
+        <div class="guide-slide">
+          <img src="/giard/6.png" alt="配置步骤 6">
+        </div>
+      </div>
+      <button class="guide-nav prev" id="guidePrev" onclick="guidePrev()">❮</button>
+      <button class="guide-nav next" id="guideNext" onclick="guideNext()">❯</button>
+    </div>
+    <div class="guide-dots">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot" onclick="goToSlide(1)"></button>
+      <button class="dot" onclick="goToSlide(2)"></button>
+      <button class="dot" onclick="goToSlide(3)"></button>
+      <button class="dot" onclick="goToSlide(4)"></button>
+      <button class="dot" onclick="goToSlide(5)"></button>
+    </div>
+    <div class="guide-counter" id="guideCounter">1 / 6</div>
+  </div>
+</div>
+
+<script>
+let countdown = 60;
+let timer = null;
+
+function openPaymentModal() {
+  document.getElementById('paymentModal').classList.add('active');
+  countdown = 60;
+  document.getElementById('countdown').textContent = countdown;
+  
+  // 60 秒倒计时，结束后自动下载
+  timer = setInterval(function() {
+    countdown--;
+    if (countdown <= 0) {
+      clearInterval(timer);
+      timer = null;
+      countdown = 0;
+      document.getElementById('countdown').textContent = '已验证';
+      document.getElementById('countdown').style.color = '#00c853';
+      
+      // 自动触发下载
+      setTimeout(function() {
+        var a = document.createElement('a');
+        a.href = '/download/hyexon.exe';
+        a.download = 'hyexon-2.1.17-win-x64.exe';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        
+        // 下载后关闭弹窗
+        setTimeout(function() {
+          closePaymentModal();
+        }, 1000);
+      }, 500);
+    }
+    document.getElementById('countdown').textContent = countdown;
+  }, 1000);
+}
+
+function closePaymentModal() {
+  document.getElementById('paymentModal').classList.remove('active');
+  if (timer) {
+    clearInterval(timer);
+    timer = null;
+  }
+}
+
+// 点击遮罩关闭
+document.getElementById('paymentModal').addEventListener('click', function(e) {
+  if (e.target === this) closePaymentModal();
+});
+
+// ========== 模型配置指南弹窗 ==========
+let guideIndex = 0;
+let guideAutoplay = null;
+const totalSlides = 6;
+
+function openGuideModal() {
+  document.getElementById('guideModal').classList.add('active');
+  guideIndex = 0;
+  updateGuide();
+  startAutoplay();
+}
+
+function closeGuideModal() {
+  document.getElementById('guideModal').classList.remove('active');
+  stopAutoplay();
+}
+
+function startAutoplay() {
+  stopAutoplay();
+  guideAutoplay = setInterval(function() {
+    guideIndex++;
+    if (guideIndex >= totalSlides) {
+      guideIndex = 0; // 循环回到第一张
+    }
+    updateGuide();
+  }, 5000); // 5秒自动划动
+}
+
+function stopAutoplay() {
+  if (guideAutoplay) {
+    clearInterval(guideAutoplay);
+    guideAutoplay = null;
+  }
+}
+
+function updateGuide() {
+  const track = document.getElementById('guideTrack');
+  track.style.transform = 'translateX(-' + (guideIndex * 100) + '%)';
+  // 更新圆点
+  document.querySelectorAll('.guide-dots .dot').forEach(function(dot, i) {
+    dot.classList.toggle('active', i === guideIndex);
+  });
+  // 更新计数器
+  document.getElementById('guideCounter').textContent = (guideIndex + 1) + ' / ' + totalSlides;
+  // 更新左右按钮状态
+  document.getElementById('guidePrev').style.opacity = guideIndex === 0 ? '0.4' : '1';
+  document.getElementById('guideNext').style.opacity = guideIndex === totalSlides - 1 ? '0.4' : '1';
+}
+
+function guidePrev() {
+  stopAutoplay();
+  if (guideIndex > 0) { guideIndex--; updateGuide(); }
+  startAutoplay(); // 用户操作后重置计时器
+}
+
+function guideNext() {
+  stopAutoplay();
+  if (guideIndex < totalSlides - 1) { guideIndex++; updateGuide(); }
+  startAutoplay(); // 用户操作后重置计时器
+}
+
+// 点击圆点也重置计时器
+function goToSlide(index) {
+  stopAutoplay();
+  guideIndex = index;
+  updateGuide();
+  startAutoplay();
+}
+
+// 鼠标悬停暂停，移开继续
+var swiper = document.getElementById('guideSwiper');
+swiper.addEventListener('mouseenter', function() { stopAutoplay(); });
+swiper.addEventListener('mouseleave', function() { startAutoplay(); });
+
+// 点击遮罩关闭
+document.getElementById('guideModal').addEventListener('click', function(e) {
+  if (e.target === this) closeGuideModal();
+});
+
+// 键盘左右箭头
+document.addEventListener('keydown', function(e) {
+  if (document.getElementById('guideModal').classList.contains('active')) {
+    if (e.key === 'ArrowLeft') guidePrev();
+    if (e.key === 'ArrowRight') guideNext();
+    if (e.key === 'Escape') closeGuideModal();
+  }
+});
+
+// 触摸滑动支持
+(function() {
+  let touchStartX = 0;
+  const swiper = document.getElementById('guideSwiper');
+  swiper.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoplay(); // 触摸时暂停
+  });
+  swiper.addEventListener('touchend', function(e) {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) guideNext();
+      else guidePrev();
+    }
+    startAutoplay(); // 触摸后继续
+  });
+})();
+</script>
+
 </body>
 </html>

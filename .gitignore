@@ -1,0 +1,6 @@
+# 大型可执行文件（本地存在，不提交）
+download/hyexon.exe
+# 备份目录
+backup-*
+# 图片资源（按需）
+giard/*.png
