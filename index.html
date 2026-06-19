@@ -1594,5 +1594,120 @@ document.getElementById('feedbackModal').addEventListener('click', function(e) {
   </div>
 </div>
 
+<!-- 底部信息 -->
+<style>
+.site-footer {
+  background: #f5f5f7;
+  border-top: 1px solid #e5e5e7;
+  padding: 32px 0 24px;
+  margin-top: 60px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e5e5e7;
+}
+.footer-brand h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin: 0 0 6px;
+}
+.footer-brand p {
+  font-size: 13px;
+  color: #86868b;
+  margin: 0;
+  line-height: 1.5;
+}
+.footer-links {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.footer-col h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1d1d1f;
+  margin: 0 0 10px;
+}
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  color: #6e6e73;
+  text-decoration: none;
+  margin-bottom: 6px;
+  transition: color 0.2s;
+}
+.footer-col a:hover {
+  color: #0071e3;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 20px;
+  font-size: 12px;
+  color: #86868b;
+}
+.footer-bottom a {
+  color: #6e6e73;
+  text-decoration: none;
+}
+.footer-bottom a:hover {
+  color: #0071e3;
+}
+@media (max-width: 768px) {
+  .footer-top { flex-direction: column; }
+  .footer-links { gap: 24px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>🐱 小易智能体超市</h3>
+        <p>AI 驱动的自动化工作平台，让智能体为您的业务赋能</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>产品</h4>
+          <a href="https://www.hyesky.com">首页</a>
+          <a href="http://120.79.165.22:17088" target="_blank">在线试用</a>
+          <a href="https://www.hyesky.com/agency-agents/download/hyexon.exe" download>免费下载</a>
+        </div>
+        <div class="footer-col">
+          <h4>支持</h4>
+          <a href="javascript:void(0)" onclick="openFeedbackModal()">用户反馈</a>
+          <a href="javascript:void(0)" onclick="openGuideModal()">使用指南</a>
+        </div>
+        <div class="footer-col">
+          <h4>联系</h4>
+          <a href="mailto:support@hyesky.com">support@hyesky.com</a>
+          <a href="https://github.com/hyesky" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 小何实验室 (Nous Research). All rights reserved.</span>
+      <span>
+        <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备XXXXXXXX号</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
