@@ -1013,7 +1013,8 @@ function renderFeedbackList() {
 
 function formatTime(timestamp) {
   if (!timestamp) return '';
-  const d = new Date(timestamp + 'Z');
+  // API 返回 ISO 时间字符串（如 2026-06-22T05:50:51.818963Z）
+  const d = new Date(timestamp);
   const now = new Date();
   const diff = now - d;
   const mins = Math.floor(diff / 60000);
