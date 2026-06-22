@@ -220,7 +220,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvet
 .nav-left{display:flex;align-items:center;gap:12px;}
 .nav-logo{width:36px;height:36px;border-radius:8px;object-fit:cover;}
 .nav-title{font-size:20px;font-weight:700;color:#1d1d1f;letter-spacing:-0.5px;}
+.nav-center{display:flex;align-items:center;gap:4px;}
+.nav-link{display:flex;align-items:center;gap:4px;padding:8px 12px;border-radius:8px;text-decoration:none;color:#86868b;font-size:14px;font-weight:500;transition:all 0.2s;}
+.nav-link:hover{background:#f5f5f7;color:#1d1d1f;}
+.nav-link.active{background:#f5f5f7;color:#1d1d1f;}
+.nav-icon{font-size:15px;}
 .nav-right{display:flex;align-items:center;gap:16px;}
+.nav-ico{width:18px;height:18px;fill:currentColor;vertical-align:-0.1em;}
 .nav-feedback-btn{display:flex;align-items:center;gap:8px;background:none;border:1px solid #d2d2d7;padding:8px 16px;border-radius:100px;font-size:14px;color:#1d1d1f;cursor:pointer;transition:all 0.2s;font-weight:500;}
 .nav-feedback-btn:hover{background:#f5f5f7;border-color:#0071e3;color:#0071e3;}
 .nav-feedback-btn svg{width:18px;height:18px;}
