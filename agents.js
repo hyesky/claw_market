@@ -1038,3 +1038,69 @@ function escapeHtml(text) {
 document.getElementById('feedbackModal').addEventListener('click', function(e) {
   if (e.target === this) closeFeedbackModal();
 });
+
+// ========== 产品展示轮播 ==========
+let showcaseIndex = 0;
+const showcaseTrack = document.getElementById('showcaseTrack');
+const showcaseDots = document.querySelectorAll('.showcase-dots .dot');
+const totalShowcase = 6;
+
+function updateShowcase() {
+  if (!showcaseTrack) return;
+  showcaseTrack.style.transform = `translateX(-${showcaseIndex * 100}%)`;
+  showcaseDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === showcaseIndex);
+  });
+}
+
+function nextShowcase() {
+  showcaseIndex = (showcaseIndex + 1) % totalShowcase;
+  updateShowcase();
+}
+
+function prevShowcase() {
+  showcaseIndex = (showcaseIndex - 1 + totalShowcase) % totalShowcase;
+  updateShowcase();
+}
+
+// 点击指示点切换
+showcaseDots.forEach((dot) => {
+  dot.addEventListener('click', () => {
+    showcaseIndex = parseInt(dot.dataset.index);
+    updateShowcase();
+  });
+});
+
+// 自动轮播（5秒间隔，悬停暂停）
+let showcaseTimer = setInterval(nextShowcase, 5000);
+const showcaseEl = document.querySelector('.product-showcase');
+if (showcaseEl) {
+  showcaseEl.addEventListener('mouseenter', () => clearInterval(showcaseTimer));
+  showcaseEl.addEventListener('mouseleave', () => {
+    showcaseTimer = setInterval(nextShowcase, 5000);
+  });
+}
+
+// 触摸支持
+let touchStartX = 0;
+let touchEndX = 0;
+const viewport = document.querySelector('.showcase-viewport');
+if (viewport) {
+  viewport.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  viewport.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) nextShowcase();
+      else prevShowcase();
+    }
+  }, { passive: true });
+}
+
+// 键盘支持
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') prevShowcase();
+  if (e.key === 'ArrowRight') nextShowcase();
+});

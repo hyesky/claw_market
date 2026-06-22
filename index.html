@@ -37,7 +37,7 @@
 
 
 <!-- 外部样式表 -->
-<link rel="stylesheet" href="style.css?v=20260622">
+<link rel="stylesheet" href="style.css?v=20260622-2">
 </head>
 <body>
 
@@ -91,8 +91,54 @@
       模型配置指南
     </button>
   </div>
+
+  <!-- 产品演示轮播 -->
+  <div class="product-showcase">
+    <div class="showcase-header">
+      <span class="showcase-title">✨ 产品展示</span>
+      <div class="showcase-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+        <span class="dot" data-index="4"></span>
+        <span class="dot" data-index="5"></span>
+      </div>
+    </div>
+    <div class="showcase-viewport">
+      <div class="showcase-track" id="showcaseTrack">
+        <div class="showcase-slide">
+          <img src="/giard/main1.png" alt="产品演示 1">
+        </div>
+        <div class="showcase-slide">
+          <img src="/giard/main2.png" alt="产品演示 2">
+        </div>
+        <div class="showcase-slide">
+          <img src="/giard/main3.png" alt="产品演示 3">
+        </div>
+        <div class="showcase-slide">
+          <img src="/giard/main4.png" alt="产品演示 4">
+        </div>
+        <div class="showcase-slide">
+          <img src="/giard/main5.png" alt="产品演示 5">
+        </div>
+        <div class="showcase-slide">
+          <img src="/giard/main6.png" alt="产品演示 6">
+        </div>
+      </div>
+    </div>
+    <div class="showcase-arrows">
+      <button class="showcase-arrow showcase-prev" onclick="prevShowcase()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="showcase-arrow showcase-next" onclick="nextShowcase()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+
   <br><br>
-<h1 style="display:inline-flex;align-items:center;"><img src="/favicon.png" alt="" style="width:48px;height:48px;margin-right:12px;border-radius:50%;flex-shrink:0;">小易智能体超市</h1>
+  <h1 style="display:inline-flex;align-items:center;"><img src="/favicon.png" alt="" style="width:48px;height:48px;margin-right:12px;border-radius:50%;flex-shrink:0;">小易智能体超市</h1>
   <p class="hero-subtitle">215个专业AI智能体，覆盖18个部门</p>
   <p class="hero-subtitle">像逛超市一样，选择你的AI专家</p>
   <div class="search-container">
@@ -286,7 +332,7 @@
 
 
 <!-- 外部脚本 -->
-<script src="agents.js?v=20260622"></script>
+<script src="agents.js?v=20260622-2"></script>
 
 <!-- 反馈弹窗 (行1574-1597) -->
 
