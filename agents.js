@@ -1035,9 +1035,12 @@ function escapeHtml(text) {
 }
 
 // 点击遮罩关闭
-document.getElementById('feedbackModal').addEventListener('click', function(e) {
-  if (e.target === this) closeFeedbackModal();
-});
+const feedbackModal = document.getElementById('feedbackModal');
+if (feedbackModal) {
+  feedbackModal.addEventListener('click', function(e) {
+    if (e.target === this) closeFeedbackModal();
+  });
+}
 
 // ========== 产品展示轮播 ==========
 let showcaseIndex = 0;
