@@ -1046,7 +1046,7 @@ if (feedbackModal) {
 let showcaseIndex = 0;
 const showcaseTrack = document.getElementById('showcaseTrack');
 const showcaseDots = document.querySelectorAll('.showcase-dots .dot');
-const totalShowcase = 6;
+const totalShowcase = 7;
 
 function updateShowcase() {
   if (!showcaseTrack) return;
