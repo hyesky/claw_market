@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>MCP 服务市场 - Hyesky | 8个AI智能体服务，即插即用</title>
+<meta name="description" content="Hyesky MCP Hub 提供8个专业AI服务：Bing搜索、12306火车票、航班查询、高德地图等。基于 Model Context Protocol 标准，支持 AI 应用无缝集成。">
+<meta name="keywords" content="MCP,Model Context Protocol,AI服务,API,智能体,搜索,火车票,航班,高德地图,Hyesky">
+<meta name="author" content="Hyesky">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hyesky.com/mcp-services">
+<meta property="og:title" content="MCP 服务市场 - Hyesky">
+<meta property="og:description" content="8个专业AI服务，基于 Model Context Protocol 标准，支持 AI 应用无缝集成。">
+<meta property="og:image" content="https://www.hyesky.com/favicon.png">
+
+<link rel="canonical" href="https://www.hyesky.com/mcp-services">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="style.css?v=20260622-5">
+</head>
+<body>
+
+<!-- 顶部导航栏 -->
+<nav class="top-nav">
+  <div class="nav-left">
+    <img src="/favicon.png" alt="Logo" class="nav-logo">
+    <span class="nav-title">小易智能</span>
+  </div>
+  <div class="nav-right">
+    <a href="/" class="nav-link">智能体超市</a>
+    <a href="/mcp-services" class="nav-link nav-link-active">MCP 服务</a>
+    <a href="http://120.79.165.22:17088" class="nav-trial-btn" target="_blank">
+      <img src="/favicon.png" alt="小易" style="width:18px;height:18px;border-radius:4px;object-fit:cover;">
+      在线试用
+    </a>
+  </div>
+</nav>
+
+<!-- Hero 区域 -->
+<div class="hero" style="padding: 60px 20px 30px;">
+  <h1 style="display:inline-flex;align-items:center;">
+    <span style="font-size:48px;">🤖</span>
+    <span style="margin-left:12px;">MCP 服务市场</span>
+  </h1>
+  <div class="badge" style="margin-bottom:16px;">基于 Model Context Protocol 标准 · 8个专业服务 · 即插即用</div>
+  <p style="color:#86868b;font-size:18px;max-width:800px;margin:0 auto 30px;">
+    MCP（Model Context Protocol）是 AI 应用与外部工具连接的开放标准。<br>
+    我们的 MCP Hub 提供 8 个经过测试的专业服务，您的 AI 应用只需一条配置即可调用。
+  </p>
+  
+  <!-- 快速体验按钮 -->
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="https://mcp.hyesky.com" target="_blank" class="btn-primary" style="display:inline-flex;align-items:center;padding:12px 24px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+      访问 MCP Hub 管理台
+    </a>
+    <button class="btn-secondary" onclick="copyApiKey()" style="display:inline-flex;align-items:center;padding:12px 24px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path></svg>
+      复制 API Key
+    </button>
+  </div>
+  <div id="copySuccess" style="color:#10b981;margin-top:12px;display:none;">✅ 已复制到剪贴板</div>
+</div>
+
+<!-- 统计数据 -->
+<div class="stats" style="margin-top:40px;">
+  <div class="stat-item">
+    <div class="stat-number">8</div>
+    <div class="stat-label">MCP 服务</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">35+</div>
+    <div class="stat-label">可用工具</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100%</div>
+    <div class="stat-label">在线率</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">24/7</div>
+    <div class="stat-label">稳定运行</div>
+  </div>
+</div>
+
+<!-- MCP 服务列表 -->
+<div style="max-width:1200px;margin:60px auto;padding:0 20px;">
+  <h2 class="section-title">全部服务</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:24px;margin-top:30px;" id="mcp-services-list">
+    <!-- 服务卡片将通过 JS 动态生成 -->
+  </div>
+</div>
+
+<!-- 快速体验区 -->
+<div style="background:#f8fafc;border-radius:16px;padding:40px;max-width:1000px;margin:60px auto;">
+  <h2 class="section-title">🧪 快速体验</h2>
+  <p style="color:#86868b;margin-bottom:20px;">输入关键词，直接体验 MCP 服务</p>
+  
+  <div style="display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+    <select id="serviceSelect" style="flex:1;min-width:200px;padding:12px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;background:white;">
+      <option value="bing">🔍 Bing 网页搜索</option>
+      <option value="train">🚄 12306 火车票查询</option>
+      <option value="flights">✈️ 航班查询</option>
+      <option value="ddg">🌐 DuckDuckGo 搜索</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="输入搜索关键词..." style="flex:2;min-width:200px;padding:12px;border:2px solid #e2e8f0;border-radius:8px;font-size:15px;">
+    <button onclick="quickSearch()" style="padding:12px 24px;background:#6366f1;color:white;border:none;border-radius:8px;font-size:15px;cursor:pointer;white-space:nowrap;">搜索</button>
+  </div>
+  
+  <div id="quickResult" style="background:white;border-radius:12px;padding:20px;min-height:100px;border:2px solid #e2e8f0;white-space:pre-wrap;font-family:monospace;font-size:14px;display:none;"></div>
+</div>
+
+<!-- 接入指南 -->
+<div style="max-width:1000px;margin:60px auto;padding:0 20px;">
+  <h2 class="section-title">📖 接入指南</h2>
+  <div style="margin-top:30px;">
+    <div style="display:flex;gap:16px;margin-bottom:24px;">
+      <div style="width:40px;height:40px;background:#6366f1;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;">1</div>
+      <div>
+        <h3 style="margin:0 0 8px;">获取 API Key</h3>
+        <p style="color:#86868b;margin:0;">使用上面的"复制 API Key"按钮获取您的专属访问密钥</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;margin-bottom:24px;">
+      <div style="width:40px;height:40px;background:#6366f1;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;">2</div>
+      <div>
+        <h3 style="margin:0 0 8px;">配置到您的应用</h3>
+        <p style="color:#86868b;margin:0;">在 MCP 客户端中添加服务器地址：<code style="background:#f1f5f9;padding:2px 8px;border-radius:4px;">https://mcp.hyesky.com</code></p>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;margin-bottom:24px;">
+      <div style="width:40px;height:40px;background:#6366f1;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;">3</div>
+      <div>
+        <h3 style="margin:0 0 8px;">开始调用</h3>
+        <p style="color:#86868b;margin:0;">通过 HTTP API 直接调用，或使用 MCP 协议与 AI 模型集成</p>
+      </div>
+    </div>
+  </div>
+  
+  <div style="background:#f1f5f9;padding:20px;border-radius:12px;margin-top:20px;">
+    <h4 style="margin:0 0 12px;">💻 API 调用示例</h4>
+    <pre style="background:#1e293b;color:#e2e8f0;padding:16px;border-radius:8px;overflow-x:auto;font-size:14px;line-height:1.6;">curl -X POST https://mcp.hyesky.com/api/tools/Bing%20Web%20Search%20via%20Playwright/bing_search \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -d '{"query": "AI 最新技术", "maxResults": 3}'</pre>
+  </div>
+</div>
+
+<!-- 常见问题 -->
+<div style="max-width:1000px;margin:60px auto;padding:0 20px;">
+  <h2 class="section-title">❓ 常见问题</h2>
+  <div style="margin-top:30px;">
+    <details style="background:white;border:2px solid #e2e8f0;border-radius:12px;padding:16px;margin-bottom:12px;cursor:pointer;">
+      <summary style="font-weight:600;font-size:16px;">什么是 MCP（Model Context Protocol）？</summary>
+      <p style="color:#86868b;margin-top:12px;margin-bottom:0;">MCP 是一个开放的 AI 连接协议，由 Anthropic 提出。它允许 AI 模型安全地访问外部工具和数据来源，标准化了 AI 与应用之间的交互方式。</p>
+    </details>
+    <details style="background:white;border:2px solid #e2e8f0;border-radius:12px;padding:16px;margin-bottom:12px;cursor:pointer;">
+      <summary style="font-weight:600;font-size:16px;">MCP 服务是免费的吗？</summary>
+      <p style="color:#86868b;margin-top:12px;margin-bottom:0;">当前 MCP Hub 服务免费开放使用。如需企业级定制或更高并发支持，请联系 our team。</p>
+    </details>
+    <details style="background:white;border:2px solid #e2e8f0;border-radius:12px;padding:16px;margin-bottom:12px;cursor:pointer;">
+      <summary style="font-weight:600;font-size:16px;">如何自定义/添加自己的 MCP 服务？</summary>
+      <p style="color:#86868b;margin-top:12px;margin-bottom:0;">我们的 MCP Hub 基于开源方案构建，支持自定义服务注册。您可以基于相同的架构搭建自己的 MCP Hub，或联系我们要部署专属实例。</p>
+    </details>
+  </div>
+</div>
+
+<!-- 底部信息 -->
+<footer class="site-footer" style="margin-top:80px;">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>🐱 小易智能体超市</h3>
+        <p>AI 驱动的自动化工作平台，让智能体为您的业务赋能</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>支持</h4>
+          <a href="/mcp-services">MCP 服务</a>
+          <a href="javascript:void(0)" onclick="openFeedbackModal()">用户反馈</a>
+          <a href="javascript:void(0)" onclick="openGuideModal()">使用指南</a>
+        </div>
+        <div class="footer-col">
+          <h4>联系</h4>
+          <a href="mailto:hyesky@163.com">hyesky@163.com</a>
+          <a href="https://github.com/hyesky" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 小何实验室 (Nous Research). All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// MCP 服务数据
+const mcpServices = [
+  {
+    icon: '🔍',
+    name: 'Bing 网页搜索',
+    desc: '通过 Playwright 自动化 Bing 搜索引擎，获取最新网页结果',
+    status: 'connected',
+    tools: ['bing_search'],
+    tags: ['搜索', 'Web']
+  },
+  {
+    icon: '🌐',
+    name: 'DuckDuckGo 搜索',
+    desc: '隐私优先的搜索引擎，支持网页、新闻、图片、视频搜索',
+    status: 'connected',
+    tools: ['ddg_search', 'ddg_search_news', 'ddg_search_images', 'ddg_search_videos'],
+    tags: ['搜索', '隐私']
+  },
+  {
+    icon: '🚄',
+    name: '12306 火车票',
+    desc: '实时查询中国火车车次、票价、余票信息',
+    status: 'connected',
+    tools: ['get-tickets', 'get-station-code', 'get-current-date'],
+    tags: ['交通', '出行']
+  },
+  {
+    icon: '✈️',
+    name: '航班查询',
+    desc: '基于 Google Flights 的航班搜索，支持多城市、多日期对比',
+    status: 'connected',
+    tools: ['search_flights', 'get_date_grid', 'find_airport_code'],
+    tags: ['交通', '出行']
+  },
+  {
+    icon: '🗺️',
+    name: '高德地图',
+    desc: '地理编码、逆地理编码、天气查询、路线规划等',
+    status: 'connected',
+    tools: ['geo', 'regeocode', 'weather', 'search_detail'],
+    tags: ['地图', '天气']
+  },
+  {
+    icon: '🌐',
+    name: '网页抓取',
+    desc: '通过 Playwright 浏览器自动化，抓取网页内容',
+    status: 'connected',
+    tools: ['browser_navigate', 'browser_take_screenshot', 'browser_click'],
+    tags: ['自动化', 'Web']
+  },
+  {
+    icon: '📰',
+    name: 'Web Fetch',
+    desc: '快速获取和解析网页内容',
+    status: 'connected',
+    tools: ['fetch'],
+    tags: ['数据', 'Web']
+  },
+  {
+    icon: '💬',
+    name: 'Slack 集成',
+    desc: '读取消息、发送消息、管理频道等',
+    status: 'connected',
+    tools: ['slack_list_channels', 'slack_post_message'],
+    tags: ['通讯', '协作']
+  }
+];
+
+// 渲染服务卡片
+function renderServices() {
+  const container = document.getElementById('mcp-services-list');
+  container.innerHTML = mcpServices.map(s => `
+    <div style="background:white;border:2px solid #e2e8f0;border-radius:16px;padding:24px;transition:all 0.3s;" 
+         onmouseover="this.style.borderColor='#6366f1';this.style.transform='translateY(-4px)';this.style.boxShadow='0 10px 30px rgba(99,102,241,0.1)'" 
+         onmouseout="this.style.borderColor='#e2e8f0';this.style.transform='none';this.style.boxShadow='none'">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+        <div style="font-size:32px;">${s.icon}</div>
+        <span style="background:#dcfce7;color:#16a34a;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">
+          ● ${s.status === 'connected' ? '在线' : '离线'}
+        </span>
+      </div>
+      <h3 style="margin:0 0 8px;font-size:18px;">${s.name}</h3>
+      <p style="color:#86868b;margin:0 0 16px;font-size:14px;line-height:1.5;">${s.desc}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        ${s.tags.map(t => `<span style="background:#f1f5f9;padding:4px 10px;border-radius:6px;font-size:12px;color:#64748b;">${t}</span>`).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+// 复制 API Key
+function copyApiKey() {
+  const key = 'mcphub_5a9df0a0c1499c8194c60eb427e5989099f13fe775b75ca43e21c42a50c6bc61';
+  navigator.clipboard.writeText(key).then(() => {
+    const el = document.getElementById('copySuccess');
+    el.style.display = 'block';
+    setTimeout(() => el.style.display = 'none', 2000);
+  });
+}
+
+// 快速搜索
+async function quickSearch() {
+  const service = document.getElementById('serviceSelect').value;
+  const query = document.getElementById('searchInput').value.trim();
+  const resultDiv = document.getElementById('quickResult');
+  
+  if (!query) {
+    alert('请输入搜索关键词');
+    return;
+  }
+  
+  resultDiv.style.display = 'block';
+  resultDiv.textContent = '搜索中...';
+  
+  try {
+    let endpoint, payload;
+    
+    switch(service) {
+      case 'bing':
+        endpoint = '/api/tools/Bing%20Web%20Search%20via%20Playwright/bing_search';
+        payload = { query, maxResults: 5 };
+        break;
+      case 'train':
+        endpoint = '/api/tools/train/train-get-tickets';
+        payload = { fromStation: query, toStation: '上海', date: new Date().toISOString().split('T')[0] };
+        break;
+      case 'flights':
+        endpoint = '/api/tools/flights/search_flights';
+        payload = { origin: 'PEK', destination: 'SHA', departure_date: '2026-07-01' };
+        break;
+      case 'ddg':
+        endpoint = '/api/tools/ddg/ddg-search';
+        payload = { query };
+        break;
+    }
+    
+    const res = await fetch(`https://mcp.hyesky.com${endpoint}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer mcphub_5a9df0a0c1499c8194c60eb427e5989099f13fe775b75ca43e21c42a50c6bc61'
+      },
+      body: JSON.stringify(payload)
+    });
+    
+    const data = await res.json();
+    const text = data.content?.[0]?.text || '未获取到结果';
+    resultDiv.textContent = text.substring(0, 1000);
+    
+  } catch (err) {
+    resultDiv.textContent = '搜索出错：' + err.message;
+  }
+}
+
+// 初始化
+renderServices();
+</script>
+</body>
+</html>
