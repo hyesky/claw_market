@@ -6,9 +6,9 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>MCP 服务市场 - Hyesky | 8个AI智能体服务，即插即用</title>
-<meta name="description" content="Hyesky MCP Hub 提供8个专业AI服务：Bing搜索、12306火车票、航班查询、高德地图等。基于 Model Context Protocol 标准，支持 AI 应用无缝集成。">
-<meta name="keywords" content="MCP,Model Context Protocol,AI服务,API,智能体,搜索,火车票,航班,高德地图,Hyesky">
+<title>MCP 服务市场 - Hyesky | 14 个 AI 服务，即插即用</title>
+<meta name="description" content="Hyesky MCP Hub 提供 14 个专业 AI 服务：Bing 搜索、12306 火车票、航班查询、Notion、Docker、ECharts、Mermaid 等。基于 Model Context Protocol 标准，支持 AI 应用无缝集成。">
+<meta name="keywords" content="MCP,Model Context Protocol,AI 服务，API,智能体，搜索，火车票，航班，Notion,Docker,图表，Hyesky">
 <meta name="author" content="Hyesky">
 <meta name="robots" content="index, follow">
 
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.hyesky.com/mcp-services">
 <meta property="og:title" content="MCP 服务市场 - Hyesky">
-<meta property="og:description" content="8个专业AI服务，基于 Model Context Protocol 标准，支持 AI 应用无缝集成。">
+<meta property="og:description" content="14 个专业 AI 服务，基于 Model Context Protocol 标准，支持 AI 应用无缝集成。">
 <meta property="og:image" content="https://www.hyesky.com/favicon.png">
 
 <link rel="canonical" href="https://www.hyesky.com/mcp-services">
@@ -47,10 +47,10 @@
     <span style="font-size:48px;">🤖</span>
     <span style="margin-left:12px;">MCP 服务市场</span>
   </h1>
-  <div class="badge" style="margin-bottom:16px;">基于 Model Context Protocol 标准 · 8个专业服务 · 即插即用</div>
+  <div class="badge" style="margin-bottom:16px;">基于 Model Context Protocol 标准 · 14 个专业服务 · 即插即用</div>
   <p style="color:#86868b;font-size:18px;max-width:800px;margin:0 auto 30px;">
     MCP（Model Context Protocol）是 AI 应用与外部工具连接的开放标准。<br>
-    我们的 MCP Hub 提供 8 个经过测试的专业服务，您的 AI 应用只需一条配置即可调用。
+    我们的 MCP Hub 提供 14 个经过测试的专业服务，您的 AI 应用只需一条配置即可调用。
   </p>
   
   <!-- 快速体验按钮 -->
@@ -70,11 +70,11 @@
 <!-- 统计数据 -->
 <div class="stats" style="margin-top:40px;">
   <div class="stat-item">
-    <div class="stat-number">8</div>
+    <div class="stat-number">14</div>
     <div class="stat-label">MCP 服务</div>
   </div>
   <div class="stat-item">
-    <div class="stat-number">35+</div>
+    <div class="stat-number">50+</div>
     <div class="stat-label">可用工具</div>
   </div>
   <div class="stat-item">
@@ -241,8 +241,56 @@ const mcpServices = [
     tags: ['地图', '天气']
   },
   {
+    icon: '📝',
+    name: 'Notion API',
+    desc: '管理 Notion 文档、数据库、任务列表等',
+    status: 'connected',
+    tools: ['get_page', 'search', 'create_page'],
+    tags: ['文档', '笔记']
+  },
+  {
+    icon: '🐳',
+    name: 'Docker 管理',
+    desc: '管理 Docker 容器、镜像、网络、数据卷',
+    status: 'connected',
+    tools: ['list_containers', 'list_images', 'create_container'],
+    tags: ['运维', '容器']
+  },
+  {
+    icon: '📊',
+    name: 'ECharts 图表',
+    desc: '使用 ECharts 生成各种数据可视化图表',
+    status: 'connected',
+    tools: ['generate_chart', 'get_chart_config'],
+    tags: ['图表', '可视化']
+  },
+  {
+    icon: '🔗',
+    name: 'Mermaid 流程图',
+    desc: '生成流程图、时序图、甘特图等 Mermaid 图表',
+    status: 'connected',
+    tools: ['generate_diagram', 'get_diagram_config'],
+    tags: ['图表', '文档']
+  },
+  {
+    icon: '🌦️',
+    name: 'Weather 天气',
+    desc: '实时天气查询、天气预报、空气质量等',
+    status: 'connected',
+    tools: ['get_current_weather', 'get_forecast'],
+    tags: ['天气', '出行']
+  },
+  {
+    icon: '📖',
+    name: 'Context7 文档',
+    desc: '查询 Upstash Context7 官方文档和代码示例',
+    status: 'connected',
+    tools: ['search_docs', 'get_examples'],
+    tags: ['文档', '开发']
+  },
+  {
     icon: '🌐',
-    name: '网页抓取',
+    name: 'Playwright 浏览器',
     desc: '通过 Playwright 浏览器自动化，抓取网页内容',
     status: 'connected',
     tools: ['browser_navigate', 'browser_take_screenshot', 'browser_click'],
