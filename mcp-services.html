@@ -6,9 +6,9 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>MCP 服务市场 - Hyesky | 14 个 AI 服务，即插即用</title>
-<meta name="description" content="Hyesky MCP Hub 提供 14 个专业 AI 服务：Bing 搜索、12306 火车票、航班查询、Notion、Docker、ECharts、Mermaid 等。基于 Model Context Protocol 标准，支持 AI 应用无缝集成。">
-<meta name="keywords" content="MCP,Model Context Protocol,AI 服务，API,智能体，搜索，火车票，航班，Notion,Docker,图表，Hyesky">
+<title>MCP 服务市场 - Hyesky | 15 个 AI 服务，即插即用</title>
+<meta name="description" content="Hyesky MCP Hub 提供 15 个专业 AI 服务：Bing 搜索、12306 火车票、航班查询、Notion、PostgreSQL、Docker、ECharts、Mermaid 等。基于 Model Context Protocol 标准，支持 AI 应用无缝集成。">
+<meta name="keywords" content="MCP,Model Context Protocol,AI 服务，API,智能体，搜索，火车票，航班，Notion,PostgreSQL,Docker,图表，Hyesky">
 <meta name="author" content="Hyesky">
 <meta name="robots" content="index, follow">
 
@@ -47,10 +47,10 @@
     <span style="font-size:48px;">🤖</span>
     <span style="margin-left:12px;">MCP 服务市场</span>
   </h1>
-  <div class="badge" style="margin-bottom:16px;">基于 Model Context Protocol 标准 · 14 个专业服务 · 即插即用</div>
+  <div class="badge" style="margin-bottom:16px;">基于 Model Context Protocol 标准 · 15 个专业服务 · 即插即用</div>
   <p style="color:#86868b;font-size:18px;max-width:800px;margin:0 auto 30px;">
     MCP（Model Context Protocol）是 AI 应用与外部工具连接的开放标准。<br>
-    我们的 MCP Hub 提供 14 个经过测试的专业服务，您的 AI 应用只需一条配置即可调用。
+    我们的 MCP Hub 提供 15 个经过测试的专业服务，您的 AI 应用只需一条配置即可调用。
   </p>
   
   <!-- 快速体验按钮 -->
@@ -70,7 +70,7 @@
 <!-- 统计数据 -->
 <div class="stats" style="margin-top:40px;">
   <div class="stat-item">
-    <div class="stat-number">14</div>
+    <div class="stat-number">15</div>
     <div class="stat-label">MCP 服务</div>
   </div>
   <div class="stat-item">
@@ -311,6 +311,14 @@ const mcpServices = [
     status: 'connected',
     tools: ['slack_list_channels', 'slack_post_message'],
     tags: ['通讯', '协作']
+  },
+  {
+    icon: '🐘',
+    name: 'PostgreSQL 数据库',
+    desc: '安全查询 PostgreSQL 数据库，支持读写操作（需配置数据库连接）',
+    status: 'connected',
+    tools: ['sql_read', 'sql_write', 'get_schema'],
+    tags: ['数据库', '查询']
   }
 ];
 
