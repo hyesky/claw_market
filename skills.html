@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Skills 市场 - Hyesky | 20+ 热门 Agent Skills 即装即用</title>
+<meta name="description" content="Hyesky Skills 市场精选 20+ 个 Agent Skills：前端设计、React 最佳实践、TDD、Grill Me、飞书集成、Supabase 等。基于 skills.sh 标准，一个命令安装。">
+<meta name="keywords" content="Skills,Agent Skills,skills.sh,AI Agent,前端设计,TDD,React,飞书,Supabase,Hyesky">
+<meta name="author" content="Hyesky">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.hyesky.com/skills.html">
+<meta property="og:title" content="Skills 市场 - Hyesky">
+<meta property="og:description" content="精选 20+ 个 Agent Skills，基于 skills.sh 标准，一个命令安装。">
+<meta property="og:image" content="https://www.hyesky.com/favicon.png">
+
+<link rel="canonical" href="https://www.hyesky.com/skills.html">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="style.css?v=20260622-5">
+</head>
+<body>
+
+<!-- 顶部导航栏 -->
+<nav class="top-nav">
+  <div class="nav-left">
+    <img src="/favicon.png" alt="Logo" class="nav-logo">
+    <span class="nav-title">小易智能</span>
+  </div>
+  <div class="nav-center">
+    <a href="/" class="nav-link">小易智能</a>
+    <a href="/agents.html" class="nav-link">智能体超市</a>
+    <a href="/mcp-services.html" class="nav-link">MCP 服务</a>
+    <a href="/skills.html" class="nav-link nav-link-active">Skills 市场</a>
+  </div>
+  <div class="nav-right">
+    <a href="http://120.79.165.22:17088" class="nav-trial-btn" target="_blank">
+      <img src="/favicon.png" alt="小易" style="width:18px;height:18px;border-radius:4px;object-fit:cover;">
+      在线试用
+    </a>
+    <button class="nav-feedback-btn" onclick="openFeedbackModal()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      用户反馈
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero" style="padding: 60px 20px 30px;">
+  <h1 style="display:inline-flex;align-items:center;">
+    <span style="font-size:48px;">⚡</span>
+    <span style="margin-left:12px;">Skills 市场</span>
+  </h1>
+  <div class="badge" style="margin-bottom:16px;">基于 skills.sh 标准 · 20+ 精选 Skills · 即装即用</div>
+  <p style="color:#86868b;font-size:18px;max-width:800px;margin:0 auto 30px;">
+    Agent Skills 是 AI 智能体的可复用能力包。通过 <code style="background:#f1f5f9;padding:2px 6px;border-radius:4px;">npx skills install</code> 一条命令即可安装。<br>
+    我们精选了 skills.sh 平台上最热门的 20+ Skills，覆盖前端、后端、设计、运维等场景。
+  </p>
+  
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <a href="https://skills.sh" target="_blank" class="btn-primary" style="display:inline-flex;align-items:center;padding:12px 24px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+      访问 skills.sh
+    </a>
+  </div>
+</div>
+
+<!-- 统计数据 -->
+<div class="stats" style="margin-top:40px;">
+  <div class="stat-item">
+    <div class="stat-number">20+</div>
+    <div class="stat-label">精选 Skills</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">600K+</div>
+    <div class="stat-label">总安装量</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">8</div>
+    <div class="stat-label">发布方</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">18+</div>
+    <div class="stat-label">支持 Agent</div>
+  </div>
+</div>
+
+<!-- Skills 分类 -->
+<div style="max-width:1200px;margin:60px auto;padding:0 20px;">
+  <h2 class="section-title">全部 Skills</h2>
+  <div style="display:flex;gap:12px;justify-content:center;margin-bottom:30px;flex-wrap:wrap;" id="skill-filters">
+    <button class="filter-btn active" data-filter="all">全部</button>
+    <button class="filter-btn" data-filter="frontend">前端</button>
+    <button class="filter-btn" data-filter="backend">后端</button>
+    <button class="filter-btn" data-filter="design">设计</button>
+    <button class="filter-btn" data-filter="workflow">工作流</button>
+    <button class="filter-btn" data-filter="devops">DevOps</button>
+    <button class="filter-btn" data-filter="multimedia">多媒体</button>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:24px;margin-top:30px;" id="skills-list">
+    <!-- 通过 JS 动态生成 -->
+  </div>
+</div>
+
+<!-- 快速安装 -->
+<div style="max-width:1000px;margin:60px auto;padding:0 20px;">
+  <h2 class="section-title">📦 快速安装</h2>
+  <p style="color:#86868b;margin-bottom:20px;text-align:center;">复制命令，粘贴到终端即可安装</p>
+  <div style="background:#1e293b;color:#e2e8f0;padding:20px;border-radius:12px;overflow-x:auto;" id="install-commands">
+    <!-- 动态生成 -->
+  </div>
+</div>
+
+<!-- 接入指南 -->
+<div style="max-width:1000px;margin:60px auto;padding:0 20px;">
+  <h2 class="section-title">📖 接入指南</h2>
+  <div style="margin-top:30px;">
+    <div style="display:flex;gap:16px;margin-bottom:24px;">
+      <div style="width:40px;height:40px;background:#6366f1;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;">1</div>
+      <div>
+        <h3 style="margin:0 0 8px;">选择 Skills</h3>
+        <p style="color:#86868b;margin:0;">从上方浏览您需要的 Skills，点击「复制安装命令」</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;margin-bottom:24px;">
+      <div style="width:40px;height:40px;background:#6366f1;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;">2</div>
+      <div>
+        <h3 style="margin:0 0 8px;">安装到 Agent</h3>
+        <p style="color:#86868b;margin:0;">在 Claude Code、Cursor、Windsurf 等 Agent 中粘贴安装命令</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:16px;margin-bottom:24px;">
+      <div style="width:40px;height:40px;background:#6366f1;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0;">3</div>
+      <div>
+        <h3 style="margin:0 0 8px;">开始使用</h3>
+        <p style="color:#86868b;margin:0;">Skill 会自动加载到 Agent 的工作目录，开箱即用</p>
+      </div>
+    </div>
+  </div>
+  
+  <div style="background:#f1f5f9;padding:20px;border-radius:12px;margin-top:20px;">
+    <h4 style="margin:0 0 12px;">💻 安装示例</h4>
+    <pre style="background:#1e293b;color:#e2e8f0;padding:16px;border-radius:8px;overflow-x:auto;font-size:14px;line-height:1.6;">$ npx skills install vercel-labs/agent-skills/frontend-design
+✅ Successfully installed frontend-design
+   Location: ~/.claude/skills/frontend-design
+
+$ npx skills install mattpocock/skills/tdd
+✅ Successfully installed tdd
+   Location: ~/.claude/skills/tdd</pre>
+  </div>
+</div>
+
+<!-- 常见问题 -->
+<div style="max-width:1000px;margin:60px auto;padding:0 20px;">
+  <h2 class="section-title">❓ 常见问题</h2>
+  <div style="margin-top:30px;">
+    <details style="background:white;border:2px solid #e2e8f0;border-radius:12px;padding:16px;margin-bottom:12px;cursor:pointer;">
+      <summary style="font-weight:600;font-size:16px;">什么是 Agent Skills？</summary>
+      <p style="color:#86868b;margin-top:12px;margin-bottom:0;">Agent Skills 是 AI 智能体的可复用能力包，包含 SKILL.md 配置文件和相关脚本。安装后，AI 智能体可以自动加载这些技能，提升工作效率。</p>
+    </details>
+    <details style="background:white;border:2px solid #e2e8f0;border-radius:12px;padding:16px;margin-bottom:12px;cursor:pointer;">
+      <summary style="font-weight:600;font-size:16px;">Skills 和 MCP 有什么区别？</summary>
+      <p style="color:#86868b;margin-top:12px;margin-bottom:0;">Skills 侧重于提供操作指导和最佳实践（类似手册），MCP 侧重于提供 API 接口（类似工具）。两者可以互补使用。</p>
+    </details>
+    <details style="background:white;border:2px solid #e2e8f0;border-radius:12px;padding:16px;margin-bottom:12px;cursor:pointer;">
+      <summary style="font-weight:600;font-size:16px;">支持哪些 AI Agent？</summary>
+      <p style="color:#86868b;margin-top:12px;margin-bottom:0;">支持 Claude Code、Cursor、Windsurf、GitHub Copilot、Codex CLI、Gemini CLI 等 18+ 主流 AI Agent。</p>
+    </details>
+    <details style="background:white;border:2px solid #e2e8f0;border-radius:12px;padding:16px;margin-bottom:12px;cursor:pointer;">
+      <summary style="font-weight:600;font-size:16px;">如何自定义/发布自己的 Skills？</summary>
+      <p style="color:#86868b;margin-top:12px;margin-bottom:0;">创建包含 SKILL.md 的目录，然后通过 `npx skills publish` 发布到 skills.sh。我们也会在平台上收录优质 Skills。</p>
+    </details>
+  </div>
+</div>
+
+<!-- 底部 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>🐱 小易智能</h3>
+        <p>AI 驱动的自动化工作平台，让智能体为您的业务赋能</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>产品</h4>
+          <a href="/agents.html">智能体超市</a>
+          <a href="/mcp-services.html">MCP 服务</a>
+          <a href="/skills.html">Skills 市场</a>
+        </div>
+        <div class="footer-col">
+          <h4>支持</h4>
+          <a href="javascript:void(0)" onclick="openFeedbackModal()">用户反馈</a>
+        </div>
+        <div class="footer-col">
+          <h4>联系</h4>
+          <a href="mailto:hyesky@163.com">hyesky@163.com</a>
+          <a href="https://github.com/hyesky" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 小何实验室 (Nous Research). All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Skills 数据
+const skillsData = [
+  // === 前端 ===
+  {
+    icon: '⚛️',
+    name: 'React Best Practices',
+    desc: 'React 和 Next.js 性能优化最佳实践，370K+ 安装量',
+    status: 'verified',
+    publisher: 'vercel-labs',
+    tags: ['前端', 'React', 'Next.js'],
+    install: 'npx skills install vercel-labs/agent-skills/vercel-react-best-practices',
+    installs: '370K'
+  },
+  {
+    icon: '🎨',
+    name: 'Frontend Design',
+    desc: '生成高质量、生产级前端界面，包含 HTML/CSS/JS 和 React',
+    status: 'verified',
+    publisher: 'anthropics',
+    tags: ['前端', '设计'],
+    install: 'npx skills install anthropics/skills/frontend-design',
+    installs: '221K'
+  },
+  {
+    icon: '🌐',
+    name: 'Web Design Guidelines',
+    desc: 'Vercel 官方 Web 界面设计规范：间距、排版、交互和可访问性',
+    status: 'verified',
+    publisher: 'vercel-labs',
+    tags: ['前端', '设计', '规范'],
+    install: 'npx skills install vercel-labs/agent-skills/web-design-guidelines',
+    installs: '185K'
+  },
+  {
+    icon: '🧩',
+    name: 'Composition Patterns',
+    desc: '可组合的组件架构模式，用于构建可扩展的 Next.js 应用',
+    status: 'verified',
+    publisher: 'vercel-labs',
+    tags: ['前端', '架构'],
+    install: 'npx skills install vercel-labs/agent-skills/vercel-composition-patterns',
+    installs: '142K'
+  },
+  {
+    icon: '📱',
+    name: 'React Native Skills',
+    desc: 'React Native 和 Expo 应用开发最佳实践',
+    status: 'verified',
+    publisher: 'vercel-labs',
+    tags: ['前端', '移动端', 'React Native'],
+    install: 'npx skills install vercel-labs/agent-skills/vercel-react-native-skills',
+    installs: '98K'
+  },
+  {
+    icon: '🔍',
+    name: 'Agent Browser',
+    desc: 'AI Agent 浏览器自动化：网页导航、截图、数据采集',
+    status: 'verified',
+    publisher: 'vercel-labs',
+    tags: ['前端', '自动化', '浏览器'],
+    install: 'npx skills install vercel-labs/agent-browser/agent-browser',
+    installs: '156K'
+  },
+  {
+    icon: '📦',
+    name: 'Bundle Analyzer',
+    desc: '分析 Web 应用打包体积，优化依赖和代码分割',
+    status: 'verified',
+    publisher: 'vercel-labs',
+    tags: ['前端', '优化'],
+    install: 'npx skills install vercel-labs/agent-skills/analyze-bundle',
+    installs: '87K'
+  },
+  
+  // === 后端 ===
+  {
+    icon: '🐘',
+    name: 'Supabase Postgres',
+    desc: 'Supabase PostgreSQL 最佳实践，数据库设计和查询优化',
+    status: 'verified',
+    publisher: 'supabase',
+    tags: ['后端', '数据库', 'PostgreSQL'],
+    install: 'npx skills install supabase/agent-skills/supabase-postgres-best-practices',
+    installs: '124K'
+  },
+  {
+    icon: '📝',
+    name: 'Grill Me',
+    desc: '通过问答方式深入了解代码库，智能体自动提问和分析',
+    status: 'verified',
+    publisher: 'mattpocock',
+    tags: ['后端', '代码分析'],
+    install: 'npx skills install mattpocock/skills/grill-me',
+    installs: '189K'
+  },
+  {
+    icon: '🔥',
+    name: 'Grill With Docs',
+    desc: '结合文档进行代码分析，智能提问和解答',
+    status: 'verified',
+    publisher: 'mattpocock',
+    tags: ['后端', '文档'],
+    install: 'npx skills install mattpocock/skills/grill-with-docs',
+    installs: '134K'
+  },
+  
+  // === 工作流 ===
+  {
+    icon: '✅',
+    name: 'TDD (测试驱动开发)',
+    desc: '完整的 TDD 工作流：编写测试、实现代码、重构',
+    status: 'verified',
+    publisher: 'mattpocock',
+    tags: ['工作流', '测试', 'TDD'],
+    install: 'npx skills install mattpocock/skills/tdd',
+    installs: '167K'
+  },
+  {
+    icon: '📋',
+    name: 'To PRD (产品需求文档)',
+    desc: '将想法快速转化为结构化产品需求文档',
+    status: 'verified',
+    publisher: 'mattpocock',
+    tags: ['工作流', '产品', '文档'],
+    install: 'npx skills install mattpocock/skills/to-prd',
+    installs: '95K'
+  },
+  {
+    icon: '🐛',
+    name: 'Triage',
+    desc: '智能优先级排序和任务分类，自动分配 Issue',
+    status: 'verified',
+    publisher: 'mattpocock',
+    tags: ['工作流', '项目管理'],
+    install: 'npx skills install mattpocock/skills/triage',
+    installs: '78K'
+  },
+  {
+    icon: '🏗️',
+    name: 'Codebase Architecture',
+    desc: '分析和改进代码库架构，识别设计问题和改进空间',
+    status: 'verified',
+    publisher: 'mattpocock',
+    tags: ['工作流', '架构'],
+    install: 'npx skills install mattpocock/skills/improve-codebase-architecture',
+    installs: '112K'
+  },
+  
+  // === 设计 ===
+  {
+    icon: '🎯',
+    name: 'UI/UX Pro Max',
+    desc: '全面的 UI/UX 设计最佳实践和指南',
+    status: 'verified',
+    publisher: 'nextlevelbuilder',
+    tags: ['设计', 'UI', 'UX'],
+    install: 'npx skills install nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max',
+    installs: '89K'
+  },
+  {
+    icon: '📱',
+    name: 'Mobile App Design',
+    desc: '移动端应用设计最佳实践，iOS/Android 双平台',
+    status: 'verified',
+    publisher: 'sleekdotdesign',
+    tags: ['设计', '移动端'],
+    install: 'npx skills install sleekdotdesign/agent-skills/sleek-design-mobile-apps',
+    installs: '67K'
+  },
+  
+  // === DevOps ===
+  {
+    icon: '☁️',
+    name: 'Azure AI',
+    desc: 'Azure AI 服务统一接入：Search、Speech、OpenAI、Document Intelligence',
+    status: 'verified',
+    publisher: 'microsoft',
+    tags: ['DevOps', 'AI', 'Azure'],
+    install: 'npx skills install microsoft/azure-skills/azure-ai',
+    installs: '145K'
+  },
+  {
+    icon: '🐳',
+    name: 'Azure Kubernetes',
+    desc: 'Azure Kubernetes 服务部署和管理最佳实践',
+    status: 'verified',
+    publisher: 'microsoft',
+    tags: ['DevOps', 'Kubernetes', 'Azure'],
+    install: 'npx skills install microsoft/azure-skills/azure-kubernetes',
+    installs: '76K'
+  },
+  {
+    icon: '📋',
+    name: 'GitHub Actions',
+    desc: 'GitHub Actions CI/CD 工作流配置和最佳实践',
+    status: 'verified',
+    publisher: 'xixu-me',
+    tags: ['DevOps', 'CI/CD', 'GitHub'],
+    install: 'npx skills install xixu-me/skills/github-actions-docs',
+    installs: '54K'
+  },
+  {
+    icon: '🔒',
+    name: 'Secure Linux Hosting',
+    desc: 'Linux 服务器安全配置和加固指南',
+    status: 'verified',
+    publisher: 'xixu-me',
+    tags: ['DevOps', '安全', 'Linux'],
+    install: 'npx skills install xixu-me/skills/secure-linux-web-hosting',
+    installs: '62K'
+  },
+  
+  // === 飞书集成 ===
+  {
+    icon: '🚀',
+    name: 'Lark (飞书) 全套',
+    desc: '飞书 OpenAPI 集成：文档、表格、IM、日历、审批、邮件等 15+ 模块',
+    status: 'verified',
+    publisher: 'larksuite',
+    tags: ['工作流', '飞书', '集成'],
+    install: 'npx skills install larksuite/cli/lark-doc',
+    installs: '1.3M'
+  },
+  
+  // === 多媒体 ===
+  {
+    icon: '🎬',
+    name: 'RunComfy 多媒体套件',
+    desc: 'ComfyUI 多媒体处理：视频编辑、图片转视频、AI 视频生成、头像视频等',
+    status: 'verified',
+    publisher: 'agentspace-so',
+    tags: ['多媒体', 'AI 生成', '视频'],
+    install: 'npx skills install agentspace-so/runcomfy-agent-skills/video-edit',
+    installs: '218K'
+  },
+  
+  // === 其他 ===
+  {
+    icon: '📊',
+    name: 'D3.js Visualization',
+    desc: 'D3.js 数据可视化最佳实践和图表模式',
+    status: 'verified',
+    publisher: 'vercel-labs',
+    tags: ['前端', '可视化', 'D3'],
+    install: 'npx skills install vercel-labs/agent-skills/d3k',
+    installs: '73K'
+  },
+  {
+    icon: '🎭',
+    name: 'Caveman',
+    desc: '将复杂问题简化为本质思考的 Skill',
+    status: 'verified',
+    publisher: 'juliusbrussee',
+    tags: ['思维', '简化'],
+    install: 'npx skills install juliusbrussee/caveman/caveman',
+    installs: '45K'
+  }
+];
+
+// 渲染 Skills 卡片
+function renderSkills(filter = 'all') {
+  const container = document.getElementById('skills-list');
+  const filtered = filter === 'all' ? skillsData : skillsData.filter(s => s.tags.some(t => t.toLowerCase() === filter.toLowerCase()));
+  
+  container.innerHTML = filtered.map(s => `
+    <div class="skill-card" data-tags="${s.tags.map(t => t.toLowerCase()).join(',')}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+        <div style="font-size:32px;">${s.icon}</div>
+        <span style="background:#dcfce7;color:#16a34a;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:600;">● ${s.status === 'verified' ? '已验证' : '社区'}</span>
+      </div>
+      <h3 style="margin:0 0 8px;font-size:18px;">${s.name}</h3>
+      <p style="color:#86868b;margin:0 0 12px;font-size:14px;line-height:1.5;">${s.desc}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+        ${s.tags.map(t => `<span style="background:#f1f5f9;padding:4px 10px;border-radius:6px;font-size:12px;color:#64748b;">${t}</span>`).join('')}
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:13px;color:#86868b;">📥 ${s.installs} 安装</span>
+        <button class="copy-btn" onclick="copyInstall('${s.install.replace(/'/g, "\\'")}', this)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path></svg>
+          复制命令
+        </button>
+      </div>
+    </div>
+  `).join('');
+  
+  // 更新安装命令显示区
+  updateInstallCommands(filtered.slice(0, 5));
+}
+
+// 更新安装命令区域
+function updateInstallCommands(skills) {
+  const container = document.getElementById('install-commands');
+  container.innerHTML = `<pre style="margin:0;white-space:pre-wrap;">${skills.map(s => `$ ${s.install}`).join('\n\n')}</pre>`;
+}
+
+// 复制安装命令
+function copyInstall(cmd, btn) {
+  navigator.clipboard.writeText(cmd).then(() => {
+    const original = btn.innerHTML;
+    btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg> 已复制!`;
+    btn.style.color = '#10b981';
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.style.color = '';
+    }, 2000);
+  });
+}
+
+// 筛选按钮事件
+document.getElementById('skill-filters').addEventListener('click', (e) => {
+  if (e.target.classList.contains('filter-btn')) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    renderSkills(e.target.dataset.filter);
+  }
+});
+
+// 反馈弹窗
+function openFeedbackModal() {
+  document.getElementById('feedbackModal').classList.add('active');
+  loadFeedback();
+}
+function closeFeedbackModal() {
+  document.getElementById('feedbackModal').classList.remove('active');
+}
+
+function loadFeedback() {
+  fetch('/api/feedback')
+    .then(r => r.json())
+    .then(data => {
+      const container = document.getElementById('feedbackList');
+      if (data.length === 0) {
+        container.innerHTML = '<div class="feedback-empty"><p>暂无反馈</p></div>';
+        return;
+      }
+      container.innerHTML = data.slice(0, 20).map(f => `
+        <div class="feedback-item">
+          <div class="feedback-meta">
+            <span class="feedback-module">${f.module || '通用'}</span>
+            <span class="feedback-time">${f.time || ''}</span>
+          </div>
+          <p class="feedback-desc">${f.content || f.description || ''}</p>
+        </div>
+      `).join('');
+    })
+    .catch(() => {
+      document.getElementById('feedbackList').innerHTML = '<div class="feedback-empty"><p>加载失败</p></div>';
+    });
+}
+
+// 添加 filter-btn 样式
+const style = document.createElement('style');
+style.textContent = `
+  .skill-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s;
+  }
+  .skill-card:hover {
+    border-color: #6366f1;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(99,102,241,0.1);
+  }
+  .filter-btn {
+    padding: 8px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 100px;
+    background: white;
+    color: #64748b;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+  .filter-btn:hover {
+    border-color: #6366f1;
+    color: #6366f1;
+  }
+  .filter-btn.active {
+    background: #6366f1;
+    border-color: #6366f1;
+    color: white;
+  }
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    color: #64748b;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .copy-btn:hover {
+    border-color: #6366f1;
+    color: #6366f1;
+  }
+`;
+document.head.appendChild(style);
+
+// 初始化
+renderSkills();
+</script>
+</body>
+</html>
